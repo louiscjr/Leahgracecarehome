@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to our business website. Learn about our services and get in touch.">
+  <title>My Business | Welcome</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #243247;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #122d40;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    header a { color: white; text-decoration: none; }
+
+    .hero {
+      background: #edf3f7;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin: 0 0 16px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #176b87;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 55px 8%;
+      text-align: center;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .service {
+      padding: 24px;
+      border: 1px solid #dce4ea;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #122d40;
+      color: white;
+      text-align: center;
+      padding: 24px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>MY BUSINESS</strong>
+    <a href="#contact">Contact Us</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to My Business</h1>
+      <p>
+        We help our customers with reliable, professional
+        services tailored to their needs.
+      </p>
+      <a class="button" href="#services">Explore Our Services</a>
+    </section>
+
+    <section id="services">
+      <h2>How We Can Help</h2>
+      <p>Discover what we can do for you.</p>
+
+      <div class="services">
+        <article class="service">
+          <h3>Our Services</h3>
+          <p>Describe your main service and how it helps customers.</p>
+        </article>
+        <article class="service">
+          <h3>Our Approach</h3>
+          <p>Explain what makes your business helpful and reliable.</p>
+        </article>
+        <article class="service">
+          <h3>Personal Support</h3>
+          <p>Tell visitors how you work with customers.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Let's Talk</h2>
+      <p>Interested in working with us? Get in touch.</p>
+      <a class="button" href="mailto:YOUR_EMAIL@example.com">
+        Email Us
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 My Business. All rights reserved.</p>
+  </footer>
+</body>
+</html>
