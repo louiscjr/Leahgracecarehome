@@ -325,18 +325,66 @@
       </a>
     </section>
 
-    <section class="photo-section">
-      <!-- Replace care-home.jpg with your own photo filename -->
-      <img
-        class="home-photo"
-        src="care-home.jpg"
-        alt="Leah Grace Care Home"
-        onerror="this.style.display='none';"
-      >
-      <p class="photo-caption">
-        A warm and welcoming place to call home.
-      </p>
-    </section>
+
+<section class="photo-section">
+  <img
+    class="home-photo"
+    src="care-home.jpg"
+    alt="Leah Grace Care Home"
+    onerror="this.style.display='none';"
+  >
+
+  <p class="photo-caption">
+    A warm and welcoming place to call home.
+  </p>
+
+  <div class="address-box">
+    <h3>📍 Visit Leah Grace Care Home</h3>
+
+    <p id="care-home-address">TYPE YOUR FULL ADDRESS HERE</p>
+
+    <button
+      class="button button-primary"
+      type="button"
+      onclick="copyCareHomeAddress()"
+    >
+      <span id="copy-button-text">Copy Address</span>
+    </button>
+  </div>
+</section>
+
+<script>
+  function copyCareHomeAddress() {
+    const address = document.getElementById(
+      'care-home-address'
+    ).textContent.trim();
+
+    const buttonText = document.getElementById(
+      'copy-button-text'
+    );
+
+    if (address === 'TYPE YOUR FULL ADDRESS HERE') {
+      alert('Please add your care home address first.');
+      return;
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(address)
+        .then(() => {
+          buttonText.textContent = 'Address Copied!';
+          setTimeout(() => {
+            buttonText.textContent = 'Copy Address';
+          }, 2500);
+        })
+        .catch(() => {
+          window.prompt('Copy your address below:', address);
+        });
+    } else {
+      window.prompt('Copy your address below:', address);
+    }
+  }
+</script>
+
 
     <section class="care-section">
       <span class="section-label">Personal Care & Comfort</span>
