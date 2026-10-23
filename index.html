@@ -4,129 +4,421 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Welcome to Leah Grace Care Home. Learn about our services and get in touch.">
-  <title>My Business | Welcome</title>
+
+  <meta name="description" content="Welcome to Leah Grace Care Home, a residential care facility for the elderly. A safe, caring and supportive home for your loved ones.">
+
+  <meta name="theme-color" content="#344a3a">
+  <title>Leah Grace Care Home | Residential Care</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #243247;
-      line-height: 1.6;
+      font-family: 'DM Sans', Arial, sans-serif;
+      color: #344a3a;
+      background: #fffefa;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
     }
 
     header {
-      background: #122d40;
-      color: white;
-      padding: 20px 8%;
+      background: #344a3a;
+      color: #fffefa;
+      padding: 15px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
     }
 
-    header a { color: white; text-decoration: none; }
+    .brand {
+      font-family: 'Allura', cursive;
+      font-size: 2.2rem;
+      line-height: 1.2;
+    }
+
+    header nav a {
+      color: #fffefa;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
 
     .hero {
-      background: #edf3f7;
+      background: #f5f0e7;
+      padding: 75px 20px 65px;
       text-align: center;
-      padding: 90px 20px;
+    }
+
+    .hero .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      color: #65775d;
+      margin: 0 0 5px;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin: 0 0 16px;
+      font-family: 'Allura', cursive;
+      font-size: clamp(4rem, 10vw, 6.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin: 0;
+      color: #344a3a;
     }
 
-    .hero p {
-      max-width: 620px;
-      margin: 0 auto 28px;
+    .hero h2 {
+      font-size: clamp(1rem, 3vw, 1.35rem);
+      font-weight: 500;
+      letter-spacing: 4px;
+      margin: 4px 0 24px;
+    }
+
+    .hero .description {
+      max-width: 540px;
+      margin: 0 auto;
+      color: #596557;
+      font-size: 1rem;
+    }
+
+    .divider {
+      width: 65px;
+      height: 2px;
+      background: #b8b99d;
+      margin: 26px auto;
     }
 
     .button {
       display: inline-block;
-      background: #176b87;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
+      padding: 13px 27px;
+      border-radius: 5px;
       text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .button-primary {
+      background: #52694f;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #344a3a;
+    }
+
+    .button-outline {
+      border: 1px solid #52694f;
+      color: #344a3a;
+    }
+
+    .button-outline:hover {
+      background: #e8ebdd;
     }
 
     section {
-      padding: 55px 8%;
+      padding: 65px 7%;
       text-align: center;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #71816a;
+      font-size: 0.75rem;
+      font-weight: 700;
     }
 
-    .service {
-      padding: 24px;
-      border: 1px solid #dce4ea;
-      border-radius: 10px;
+    section h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.25;
+      margin: 10px 0 18px;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #657064;
+    }
+
+    .photo-section {
+      background: #fffefa;
+      padding-top: 15px;
+    }
+
+    .home-photo {
+      display: block;
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      max-height: 540px;
+      object-fit: cover;
+      margin: 0 auto;
+      border-radius: 12px;
+    }
+
+    .photo-caption {
+      color: #71816a;
+      font-size: 0.85rem;
+      margin-top: 12px;
+    }
+
+    .care-section {
+      background: #f5f0e7;
+    }
+
+    .care-card {
+      max-width: 620px;
+      margin: 30px auto 0;
+      background: #fffefa;
+      padding: 35px 25px;
+      border-radius: 12px;
+      border: 1px solid #e3e4d8;
+    }
+
+    .care-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .care-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin: 5px 0 10px;
+    }
+
+    .care-card p {
+      margin: 0;
+      color: #657064;
+    }
+
+    .contact-section {
+      background: #fffefa;
+    }
+
+    .contact-details {
+      max-width: 520px;
+      margin: 30px auto 0;
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-item {
+      padding: 20px;
+      border: 1px solid #e3e4d8;
+      border-radius: 9px;
+      background: #fff;
+    }
+
+    .contact-item h3 {
+      font-size: 1rem;
+      margin: 0 0 8px;
+    }
+
+    .contact-item p {
+      margin: 0 0 12px;
+      color: #657064;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item .button {
+      margin-top: 5px;
     }
 
     footer {
-      background: #122d40;
-      color: white;
+      background: #344a3a;
+      color: #fffefa;
       text-align: center;
-      padding: 24px;
+      padding: 25px 15px;
+      font-size: 0.85rem;
+    }
+
+    footer p {
+      margin: 3px 0;
+    }
+
+    footer a {
+      color: #e3e8d9;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 13px 5%;
+      }
+
+      .brand {
+        font-size: 1.8rem;
+      }
+
+      header nav a {
+        font-size: 0.85rem;
+      }
+
+      .hero {
+        padding: 65px 20px 55px;
+      }
+
+      section {
+        padding: 48px 6%;
+      }
+
+      .photo-section {
+        padding-top: 5px;
+      }
+
+      .care-card {
+        padding: 28px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <strong>MY BUSINESS</strong>
-    <a href="#contact">Contact Us</a>
+    <div class="brand">Leah Grace</div>
+    <nav>
+      <a href="#about">About Our Home</a>
+      &nbsp; | &nbsp;
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Welcome to My Business</h1>
-      <p>
-        We help our customers with reliable, professional
-        services tailored to their needs.
+    <section class="hero" id="about">
+      <p class="eyebrow">A place to feel at home</p>
+
+      <h1>Leah Grace</h1>
+      <h2>— CARE HOME —</h2>
+
+      <p class="description">
+        Residential Care Facility for the Elderly
       </p>
-      <a class="button" href="#services">Explore Our Services</a>
+
+      <div class="divider"></div>
+
+      <p class="description">
+        A safe, caring and supportive home for your loved ones.
+      </p>
+
+      <a class="button button-primary" href="#contact"
+         style="margin-top: 28px;">
+        Get in Touch
+      </a>
     </section>
 
-    <section id="services">
-      <h2>How We Can Help</h2>
-      <p>Discover what we can do for you.</p>
+    <section class="photo-section">
+      <!-- Replace care-home.jpg with your own photo filename -->
+      <img
+        class="home-photo"
+        src="care-home.jpg"
+        alt="Leah Grace Care Home"
+        onerror="this.style.display='none';"
+      >
+      <p class="photo-caption">
+        A warm and welcoming place to call home.
+      </p>
+    </section>
 
-      <div class="services">
-        <article class="service">
-          <h3>Our Services</h3>
-          <p>Describe your main service and how it helps customers.</p>
-        </article>
-        <article class="service">
-          <h3>Our Approach</h3>
-          <p>Explain what makes your business helpful and reliable.</p>
-        </article>
-        <article class="service">
-          <h3>Personal Support</h3>
-          <p>Tell visitors how you work with customers.</p>
-        </article>
+    <section class="care-section">
+      <span class="section-label">Personal Care & Comfort</span>
+
+      <h2>A Home Filled With Care</h2>
+
+      <p class="intro">
+        At Leah Grace Care Home, we believe that a home should
+        be a place of comfort, kindness and peace of mind for
+        residents and their loved ones.
+      </p>
+
+      <div class="care-card">
+        <div class="care-icon" aria-hidden="true">♡</div>
+        <h3>Room for 6 Residents</h3>
+        <p>
+          An intimate residential setting designed to feel
+          welcoming, comfortable and personal.
+        </p>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Let's Talk</h2>
-      <p>Interested in working with us? Get in touch.</p>
-      <a class="button" href="mailto:YOUR_EMAIL@example.com">
-        Email Us
-      </a>
+    <section class="contact-section" id="contact">
+      <span class="section-label">We'd Love to Hear From You</span>
+
+      <h2>Contact Leah Grace</h2>
+
+      <p class="intro">
+        Have questions or would like to learn more about our
+        home? Please get in touch.
+      </p>
+
+      <div class="contact-details">
+
+        <div class="contact-item">
+          <h3>Call Us</h3>
+
+          <!-- Replace with your phone number -->
+          <p>YOUR PHONE NUMBER</p>
+
+          <!-- Add your number in international format -->
+          <a class="button button-outline"
+             href="tel:+10000000000">
+            Call Us
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <h3>Email Us</h3>
+
+          <!-- Keep this mailto link and replace the address -->
+          <p>YOUR_EMAIL@example.com</p>
+
+          <a class="button button-primary"
+             href="mailto:YOUR_EMAIL@example.com">
+            Email Us
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <h3>Find Our Location</h3>
+
+          <p>Visit us or find directions to our care home.</p>
+
+          <!-- Replace # with your Google Maps address link -->
+          <a class="button button-outline"
+             href="#"
+             target="_blank"
+             rel="noopener noreferrer">
+            View on Google Maps
+          </a>
+        </div>
+
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 My Business. All rights reserved.</p>
+    <p>
+      &copy; 2026 Leah Grace Care Home.
+      All rights reserved.
+    </p>
   </footer>
 </body>
 </html>
