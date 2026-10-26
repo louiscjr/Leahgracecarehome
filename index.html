@@ -50,6 +50,28 @@
       font-size: 2.2rem;
       line-height: 1.2;
     }
+      
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo img {
+  display: block;
+  height: 65px;
+  max-width: 220px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .brand-logo img {
+    height: 48px;
+    max-width: 160px;
+  }
+}
+
 
     header nav a {
       color: #fffefa;
@@ -322,16 +344,23 @@
     }
   </style>
 
+
 </head>
 
 <body>
   <header>
-    <div class="brand">Leah Grace</div>
+    <a href="#about" class="brand-logo" aria-label="Leah Grace Care Home home">
+      <img
+        src="leah-grace-logo.png"
+        alt="Leah Grace Care Home Logo"
+      >
+    </a>
+
     <nav>
-      
       <a href="#contact">Contact</a>
     </nav>
   </header>
+
 
   <main>
     <section class="hero" id="about">
