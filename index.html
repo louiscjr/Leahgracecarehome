@@ -89,6 +89,15 @@
       text-align: center;
     }
 
+.hero-logo {
+  display: block;
+  width: min(90%, 460px);
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+}
+
     .hero .eyebrow {
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -366,8 +375,11 @@
     <section class="hero" id="about">
       <p class="eyebrow">A place to feel at home</p>
 
-      <h1>Leah Grace</h1>
-      <h2>— CARE HOME —</h2>
+     <img
+  class="hero-logo"
+  src="leah-grace-logo.png"
+  alt="Leah Grace Care Home"
+>
 
       <p class="description">
         Residential Care Facility for the Elderly
@@ -495,13 +507,13 @@
 
   <a class="button button-outline"
      href="tel:+19097815237">
-    <span aria-hidden="true">☎</span> Call Us
+    <span aria-hidden="true">☎</span> Call 1-909-781-5237
   </a>
 
   <a class="button button-outline"
      href="sms:+13238280705"
      style="margin-top: 12px;">
-    <span aria-hidden="true">💬</span> Text Us
+    <span aria-hidden="true">💬</span> Text 1-323-828-0705
   </a>
 </div>
 
