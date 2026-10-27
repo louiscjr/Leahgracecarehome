@@ -476,6 +476,7 @@
 
 
 
+
 <section class="photo-section" id="gallery">
   <div class="gallery">
     <div class="gallery-images">
@@ -489,6 +490,24 @@
         class="gallery-image"
         src="care-home-interior.jpg"
         alt="Interior of Leah Grace Care Home"
+      >
+
+      <img
+        class="gallery-image"
+        src="bedroom-1.jpg"
+        alt="Bedroom 1 at Leah Grace Care Home"
+      >
+
+      <img
+        class="gallery-image"
+        src="bedroom-2.jpg"
+        alt="Bedroom 2 at Leah Grace Care Home"
+      >
+
+      <img
+        class="gallery-image"
+        src="bedroom-3.jpg"
+        alt="Bedroom 3 at Leah Grace Care Home"
       >
     </div>
 
@@ -513,6 +532,12 @@
         type="button" aria-label="Show photo 1"></button>
       <button class="gallery-dot"
         type="button" aria-label="Show photo 2"></button>
+      <button class="gallery-dot"
+        type="button" aria-label="Show photo 3"></button>
+      <button class="gallery-dot"
+        type="button" aria-label="Show photo 4"></button>
+      <button class="gallery-dot"
+        type="button" aria-label="Show photo 5"></button>
     </div>
   </div>
 
@@ -536,6 +561,7 @@
     </button>
   </div>
 </section>
+
 
 
 <script>
@@ -570,6 +596,7 @@
   }
 </script>
 
+
 <script>
   const galleryImages = document.querySelectorAll('.gallery-image');
   const galleryDots = document.querySelectorAll('.gallery-dot');
@@ -577,13 +604,17 @@
 
   const galleryCaptions = [
     'Welcome to Leah Grace Care Home.',
-    'A look inside our welcoming home.'
+    'A look inside our welcoming home.',
+    'Bedroom 1 — A comfortable place to rest.',
+    'Bedroom 2 — A comfortable place to rest.',
+    'Bedroom 3 — A comfortable place to rest.'
   ];
 
   let currentPhoto = 0;
 
   function showPhoto(index) {
-    currentPhoto = (index + galleryImages.length) % galleryImages.length;
+    currentPhoto =
+      (index + galleryImages.length) % galleryImages.length;
 
     galleryImages.forEach((img, i) => {
       img.classList.toggle('active', i === currentPhoto);
@@ -591,7 +622,10 @@
 
     galleryDots.forEach((dot, i) => {
       dot.classList.toggle('active', i === currentPhoto);
-      dot.setAttribute('aria-pressed', String(i === currentPhoto));
+      dot.setAttribute(
+        'aria-pressed',
+        String(i === currentPhoto)
+      );
     });
 
     galleryCaption.textContent = galleryCaptions[currentPhoto];
