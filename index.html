@@ -385,13 +385,8 @@
       padding: 25px 15px;
       font-size: 0.85rem;
     }
-      background: #344a3a;
-      color: #fffefa;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 0.85rem;
-    }
-
+     
+    
     footer p {
       margin: 3px 0;
     }
@@ -404,7 +399,6 @@
       .care-card {
         padding: 28px 20px;
       }
-    }
 
     /* Address box styling */
     .address-box {
@@ -574,6 +568,48 @@
       window.prompt('Copy your address below:', address);
     }
   }
+</script>
+
+<script>
+  const galleryImages = document.querySelectorAll('.gallery-image');
+  const galleryDots = document.querySelectorAll('.gallery-dot');
+  const galleryCaption = document.getElementById('gallery-caption');
+
+  const galleryCaptions = [
+    'Welcome to Leah Grace Care Home.',
+    'A look inside our welcoming home.'
+  ];
+
+  let currentPhoto = 0;
+
+  function showPhoto(index) {
+    currentPhoto = (index + galleryImages.length) % galleryImages.length;
+
+    galleryImages.forEach((img, i) => {
+      img.classList.toggle('active', i === currentPhoto);
+    });
+
+    galleryDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentPhoto);
+      dot.setAttribute('aria-pressed', String(i === currentPhoto));
+    });
+
+    galleryCaption.textContent = galleryCaptions[currentPhoto];
+  }
+
+  document.querySelector('.gallery-prev').addEventListener('click', () => {
+    showPhoto(currentPhoto - 1);
+  });
+
+  document.querySelector('.gallery-next').addEventListener('click', () => {
+    showPhoto(currentPhoto + 1);
+  });
+
+  galleryDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showPhoto(index));
+  });
+
+  showPhoto(0);
 </script>
 
 
