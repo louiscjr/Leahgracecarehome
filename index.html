@@ -195,16 +195,95 @@
       padding-top: 15px;
     }
 
-    .home-photo {
-      display: block;
-      width: 100%;
-      max-width: 1000px;
-      height: auto;
-      max-height: 540px;
-      object-fit: cover;
-      margin: 0 auto;
-      border-radius: 12px;
-    }
+  
+/* Photo gallery */
+.gallery {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f5f0e7;
+}
+
+.gallery-images {
+  position: relative;
+}
+
+.gallery-image {
+  display: none;
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+}
+
+.gallery-image.active {
+  display: block;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background: rgba(52, 74, 58, 0.88);
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.gallery-prev {
+  left: 14px;
+}
+
+.gallery-next {
+  right: 14px;
+}
+
+.gallery-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: #aeb6a5;
+  cursor: pointer;
+}
+
+.gallery-dot.active {
+  background: #344a3a;
+}
+
+.gallery-arrow:focus-visible,
+.gallery-dot:focus-visible {
+  outline: 3px solid #b8b99d;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .gallery-image {
+    height: 300px;
+  }
+
+  .gallery-arrow {
+    width: 38px;
+    height: 38px;
+  }
+}
+
 
     .photo-caption {
       color: #71816a;
@@ -402,7 +481,68 @@
     </section>
 
 
-<section class="photo-section">
+
+<section class="photo-section" id="gallery">
+  <div class="gallery">
+    <div class="gallery-images">
+      <img
+        class="gallery-image active"
+        src="care-home.jpg"
+        alt="Exterior of Leah Grace Care Home"
+      >
+
+      <img
+        class="gallery-image"
+        src="care-home-interior.jpg"
+        alt="Interior of Leah Grace Care Home"
+      >
+    </div>
+
+    <button
+      class="gallery-arrow gallery-prev"
+      type="button"
+      aria-label="Previous photo"
+    >
+      &#10094;
+    </button>
+
+    <button
+      class="gallery-arrow gallery-next"
+      type="button"
+      aria-label="Next photo"
+    >
+      &#10095;
+    </button>
+
+    <div class="gallery-dots" aria-label="Choose a photo">
+      <button class="gallery-dot active"
+        type="button" aria-label="Show photo 1"></button>
+      <button class="gallery-dot"
+        type="button" aria-label="Show photo 2"></button>
+    </div>
+  </div>
+
+  <p class="photo-caption" id="gallery-caption">
+    Welcome to Leah Grace Care Home.
+  </p>
+
+  <div class="address-box">
+    <h3>📍 Visit Leah Grace Care Home</h3>
+
+    <p id="care-home-address">
+      1147 W 5th St, Ontario, CA 91762
+    </p>
+
+    <button
+      class="button button-primary"
+      type="button"
+      onclick="copyCareHomeAddress()"
+    >
+      <span id="copy-button-text">Copy Address</span>
+    </button>
+  </div>
+</section>
+
   <img
     class="home-photo"
     src="care-home.jpg"
