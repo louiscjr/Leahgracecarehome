@@ -21,6 +21,7 @@
 
     html {
       scroll-behavior: smooth;
+      background: #344a3a;
     }
 
     body {
@@ -35,15 +36,22 @@
       color: inherit;
     }
 
-    header {
-      background: #344a3a;
-      color: #fffefa;
-      padding: 15px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
+ 
+header {
+  background: #344a3a;
+  color: #fffefa;
+  padding: 12px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
 
     .brand {
       font-family: 'Allura', cursive;
@@ -378,13 +386,16 @@
       }
     }
 
-    footer {
-      background: #344a3a;
-      color: #fffefa;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 0.85rem;
-    }
+   
+footer {
+  background: #344a3a;
+  color: #fffefa;
+  text-align: center;
+  padding: 25px 15px;
+  padding-bottom: calc(25px + env(safe-area-inset-bottom));
+  font-size: 0.85rem;
+}
+
      
     
     footer p {
@@ -467,14 +478,6 @@
 <p class="description" style="font-size: 1.25rem; font-weight: 700; margin-top: 10px;">
   License Number: 365530542
 </p>
-
-      <a class="button button-primary" href="#contact"
-         style="margin-top: 28px;">
-        Get in Touch
-      </a>
-    </section>
-
-
 
 
 <section class="photo-section" id="gallery">
@@ -605,9 +608,9 @@
   const galleryCaptions = [
     'Welcome to Leah Grace Care Home.',
     'A look inside our welcoming home.',
-    'Bedroom 1 — A comfortable place to rest.',
-    'Bedroom 2 — A comfortable place to rest.',
-    'Bedroom 3 — A comfortable place to rest.'
+    'Bedroom  — A comfortable place to rest.',
+    'Bedroom  — A comfortable place to rest.',
+    'Bedroom  — A comfortable place to rest.'
   ];
 
   let currentPhoto = 0;
