@@ -435,6 +435,33 @@ footer {
       color: #596557;
       overflow-wrap: anywhere;
     }
+
+    
+.address-map-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.address-map-links .button {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .address-map-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .address-map-links .button {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
   </style>
 
 
@@ -475,6 +502,7 @@ footer {
 <p class="description" style="font-size: 1.25rem; font-weight: 700; margin-top: 10px;">
   License Number: 365530542
 </p>
+</section>
 
 
 <section class="photo-section" id="gallery">
@@ -545,21 +573,45 @@ footer {
     Welcome to Leah Grace Care Home.
   </p>
 
-  <div class="address-box">
-    <h3>📍 Visit Leah Grace Care Home</h3>
 
-    <p id="care-home-address">
-      1147 W 5th St, Ontario, CA 91762
-    </p>
 
-    <button
-      class="button button-primary"
-      type="button"
-      onclick="copyCareHomeAddress()"
+<div class="address-box">
+  <h3>📍 Visit Leah Grace Care Home</h3>
+
+  <p id="care-home-address">
+    1147 W 5th St, Ontario, CA 91762
+  </p>
+
+  <button
+    class="button button-primary"
+    type="button"
+    onclick="copyCareHomeAddress()"
+  >
+    <span id="copy-button-text">Copy Address</span>
+  </button>
+
+  <div class="address-map-links">
+    <a
+      class="button button-outline"
+      href="https://www.google.com/maps/place/1147+W+5th+St,+Ontario,+CA+91762/@34.0815177,-117.6744452,17z/data=!4m15!1m8!3m7!1s0x80c333debb3eb7dd:0x3216836b26113e34!2s1147+W+5th+St,+Ontario,+CA+91762!3b1!8m2!3d34.0812581!4d-117.6718543!16s%2Fg%2F11c2fy0cmm!3m5!1s0x80c333debb3eb7dd:0x3216836b26113e34!8m2!3d34.0812581!4d-117.6718543!16s%2Fg%2F11c2fy0cmm?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      <span id="copy-button-text">Copy Address</span>
-    </button>
+      View on Google Maps
+    </a>
+
+    <a
+      class="button button-outline"
+      href="https://maps.apple.com/place?address=1147+W+Fifth+St%2C+Ontario%2C+CA++91762%2C+United+States&coordinate=34.081222%2C-117.671815&name=1147+W+Fifth+St"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View on Apple Maps
+    </a>
   </div>
+</div>
+
+  
 </section>
 
 
@@ -715,27 +767,7 @@ footer {
           </a>
         </div>
 
-        <div class="contact-item">
-          <h3>Find Our Location</h3>
 
-          <p>Visit us or find directions to our care home.</p>
-
-          <!-- Replace # with your Google Maps address link -->
-          <a class="button button-outline"
-             href="https://www.google.com/maps/place/1147+W+5th+St,+Ontario,+CA+91762/@34.0815177,-117.6744452,17z/data=!4m15!1m8!3m7!1s0x80c333debb3eb7dd:0x3216836b26113e34!2s1147+W+5th+St,+Ontario,+CA+91762!3b1!8m2!3d34.0812581!4d-117.6718543!16s%2Fg%2F11c2fy0cmm!3m5!1s0x80c333debb3eb7dd:0x3216836b26113e34!8m2!3d34.0812581!4d-117.6718543!16s%2Fg%2F11c2fy0cmm?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D"
-             target="_blank"
-             rel="noopener noreferrer">
-            View on Google Maps
-          </a>
- <a class="button button-outline"
-     href="https://maps.apple.com/place?address=1147+W+Fifth+St%2C+Ontario%2C+CA++91762%2C+United+States&coordinate=34.081222%2C-117.671815&name=1147+W+Fifth+St"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="margin-top: 12px;">
-    View on Apple Maps
-  </a>
-          
-        </div>
 
       </div>
     </section>
