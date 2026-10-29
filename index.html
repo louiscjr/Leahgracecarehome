@@ -109,6 +109,14 @@ header {
       text-decoration: underline;
     }
 
+
+/* Spacing between navigation links */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
     .hero {
       background: #f5f0e7;
       padding: 35px 20px 45px;
@@ -321,6 +329,61 @@ header {
       background: #f5f0e7;
     }
 
+/* Careers section */
+.careers-section {
+  background: #fffefa;
+}
+
+.careers-card {
+  max-width: 620px;
+  margin: 30px auto 0;
+  padding: 35px 25px;
+  background: #f5f0e7;
+  border: 1px solid #e3e4d8;
+  border-radius: 12px;
+}
+
+.careers-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #52694f;
+}
+
+.careers-card h3 {
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 5px 0 10px;
+}
+
+.careers-card p {
+  color: #657064;
+  margin: 0 0 22px;
+}
+
+.careers-card .button {
+  margin-top: 5px;
+}
+
+.careers-card .careers-note {
+  font-size: 0.85rem;
+  margin: 18px 0 0;
+}
+
+@media (max-width: 600px) {
+  .careers-card {
+    padding: 28px 20px;
+  }
+
+  .careers-card .button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto 0;
+    text-align: center;
+  }
+}
+
     .care-card {
       max-width: 620px;
       margin: 30px auto 0;
@@ -494,9 +557,12 @@ footer {
       >
     </a>
 
-    <nav>
-      <a href="#contact">Contact</a>
-    </nav>
+    
+<nav>
+  <a href="#careers">Careers</a>
+  <a href="#contact">Contact</a>
+</nav>
+
   </header>
 
 
@@ -737,6 +803,44 @@ footer {
         </p>
       </div>
     </section>
+
+<section class="careers-section" id="careers">
+  <span class="section-label">Join Our Team</span>
+
+  <h2>Make a Difference Every Day</h2>
+
+  <p class="intro">
+    At Leah Grace Care Home, caring for others is at the
+    heart of everything we do. We're looking for caring,
+    compassionate individuals who want to make a positive
+    difference in the lives of our residents.
+  </p>
+
+  <div class="careers-card">
+    <div class="careers-icon" aria-hidden="true">♡</div>
+
+    <h3>We're Hiring!</h3>
+
+    <p>
+      Interested in becoming part of our team?
+      Explore our current job opportunity and apply
+      through Indeed.
+    </p>
+
+    <a
+      class="button button-primary"
+      href="https://www.indeed.com/viewjob?jk=ddb284dc0ded71ae&amp;from=shareddesktop_copy"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View Job &amp; Apply on Indeed ↗
+    </a>
+
+    <p class="careers-note">
+      Applications are submitted through Indeed.
+    </p>
+  </div>
+</section>
 
     <section class="contact-section" id="contact">
       <span class="section-label">We'd Love to Hear From You</span>
