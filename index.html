@@ -895,11 +895,27 @@ footer {
     </section>
   </main>
 
+
   <footer>
     <p>
       &copy; 2026 LeahGraceCottage Inc.
-      All rights reserved. 
+      All rights reserved.
     </p>
   </footer>
+
+  <script>
+    window.history.scrollRestoration = 'manual';
+
+    window.addEventListener('pageshow', function () {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+  
 </body>
 </html>
