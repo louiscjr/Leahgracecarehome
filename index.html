@@ -143,15 +143,14 @@ header nav {
       margin: 0 0 5px;
     }
 
-    .hero h1 {
-      font-family: 'Allura', cursive;
-      font-size: clamp(4rem, 10vw, 6.5rem);
-      font-weight: 400;
-      line-height: 1.05;
-      margin: 0;
-      color: #344a3a;
-    }
-
+   .hero-title {
+  font-family: 'Allura', cursive;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0 0 12px;
+  color: #344a3a;
+}
     .hero h2 {
       font-size: clamp(1rem, 3vw, 1.35rem);
       font-weight: 500;
@@ -251,7 +250,8 @@ header nav {
 .gallery-image {
   display: none;
   width: 100%;
-  height: 620px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   object-fit: cover;
 }
 
@@ -311,11 +311,8 @@ header nav {
   outline-offset: 3px;
 }
 
-@media (max-width: 600px) {
-  .gallery-image {
-    height: 300px;
-  }
 
+@media (max-width: 600px) {
   .gallery-arrow {
     width: 38px;
     height: 38px;
@@ -492,10 +489,11 @@ footer {
     }
 
    
-      .care-card {
-        padding: 28px 20px;
-      }
-
+    @media (max-width: 600px) {
+  .care-card {
+    padding: 28px 20px;
+  }
+}
     /* Address box styling */
     .address-box {
       max-width: 700px;
@@ -546,9 +544,41 @@ footer {
     text-align: center;
   }
 }
+    @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
   </style>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Leah Grace Care Home",
+  "url": "https://leahgracecarehome.com/",
+  "image": "https://leahgracecarehome.com/care-home.jpg",
+  "email": "leahgracecarehome@gmail.com",
+  "telephone": "+19097815237",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1147 W 5th St",
+    "addressLocality": "Ontario",
+    "addressRegion": "CA",
+    "postalCode": "91762",
+    "addressCountry": "US"
+  }
+}
+</script>
 
 </head>
 
@@ -579,9 +609,11 @@ footer {
   src="leah-grace-logo.png"
   alt="Leah Grace Care Home"
 >
-
+<h1 class="hero-title">
+  Leah Grace Care Home
+</h1>
       <p class="description">
-        Residential Care Facility for the Elderly. A safe, caring and supportive home for your loved ones.
+        Personalized residential care in a warm, comfortable setting in Ontario, California.
       </p>
       <div class="divider"></div>
 
@@ -596,34 +628,41 @@ footer {
 <section class="photo-section" id="gallery">
   <div class="gallery">
     <div class="gallery-images">
-      <img
-        class="gallery-image active"
-        src="care-home.jpg"
-        alt="Exterior of Leah Grace Care Home"
-      >
+     <img
+  class="gallery-image active"
+  src="care-home.jpg"
+  alt="Exterior of Leah Grace Care Home"
+  width="1600"
+  height="900"
+  fetchpriority="high"
+>
 
       <img
         class="gallery-image"
         src="care-home-interior.jpg"
         alt="Interior of Leah Grace Care Home"
+        loading="lazy"
       >
 
       <img
         class="gallery-image"
         src="bedroom-1.jpg"
         alt="Bedroom at Leah Grace Care Home"
+        loading="lazy"
       >
 
       <img
         class="gallery-image"
         src="bedroom-2.jpg"
         alt="Bedroom at Leah Grace Care Home"
+        loading="lazy"
       >
 
       <img
         class="gallery-image"
         src="bedroom-3.png"
         alt="Bedroom at Leah Grace Care Home"
+        loading="lazy"
       >
     </div>
 
@@ -643,7 +682,11 @@ footer {
       &#10095;
     </button>
 
-    <div class="gallery-dots" aria-label="Choose a photo">
+    <div
+  class="gallery-dots"
+  role="group"
+  aria-label="Choose a photo"
+>
       <button class="gallery-dot active"
         type="button" aria-label="Show photo 1"></button>
       <button class="gallery-dot"
@@ -657,7 +700,11 @@ footer {
     </div>
   </div>
 
-  <p class="photo-caption" id="gallery-caption">
+  <p
+  class="photo-caption"
+  id="gallery-caption"
+  aria-live="polite"
+>
     Welcome to Leah Grace Care Home.
   </p>
 
@@ -675,7 +722,13 @@ footer {
     type="button"
     onclick="copyCareHomeAddress()"
   >
-    <span id="copy-button-text">Copy Address</span>
+   <span
+  id="copy-button-text"
+  role="status"
+  aria-live="polite"
+>
+  Copy Address
+</span>
   </button>
 
   <div class="address-map-links">
